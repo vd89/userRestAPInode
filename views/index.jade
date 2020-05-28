@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  .container.mt-5
+    .card.border-primary.mb-3
+      .card-header
+        h1 The Todo app using Node and express 
+      .card-body
+        .card-title
+          h3 The primary input
+        .card-text.mt-5
+          form(action='/submit', method='POST')
+            .input-group.mb-3
+              input.form-control(type='text', placeholder='Input your todo', name='item')
+              .input-group-append
+                button#button-addon2.btn.btn-outline-primary Submit
+      .card-body
+        .card-title
+          h3 The todo task
+        ul.list-group
+        //- each val,i in todos 
+        //-   li.list-group-item.d-flex.justify-content-between.align-items-center
+        //-     form(action="/edit/#{val._id}",method ="POST")
+        //-       p.lead= val.item
+        //-       input.form-control(type="text", name='task', value = val.item)
+        //-       button.btn.btn-primary Edit
+        //-     form(action="/delete/#{val._id}", method="POST") 
+        //-       button.btn.btn-danger Delete
+          

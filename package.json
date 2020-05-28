@@ -1,0 +1,21 @@
+{
+  "name": "testNodeExpress",
+  "version": "1.0.0",
+  "description": "User rest api using jade template ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jade": "^1.11.0",
+    "mongoose": "^5.9.16"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/node": "^14.0.5"
+  }
+}
