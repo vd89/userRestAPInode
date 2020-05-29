@@ -23,7 +23,7 @@ const create = async (req, res) => {
         await userMail(email,name,token)
         res.render('login',{message: 'Check Email, Verify your email',display:'true'})      
       } else {
-        res.send(`The user is in the data base `)
+        res.render('login')
       }
     } else {
       console.log(`Plsease give password correct`);
@@ -34,5 +34,20 @@ const create = async (req, res) => {
   }
 }
 
+const verify = async (req,res) => {
+  const token = req.params.token
+  User.findOneAndUpdate(
+    { token: token },
+    { $set: { active: true } },
+    (err, data) => {
+      if (err) {
+        throw err;
+      }
+      res.render('login')
+		},
+	);
+  
+}
 
-export default {create,listAll}
+
+export default {create,listAll,verify}

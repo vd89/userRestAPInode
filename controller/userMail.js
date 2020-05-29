@@ -18,7 +18,7 @@ export default function userMail(email,name,token) {
 		subject: 'Email Verification - Dax Solutions ',
 		html: `Hello ${name}, 
             <br /> Greetings ! <br /><br />
-            Email Verification Link :<a href="http://localhost:3000/verify/${token}">Click this link to verify</a>
+            Email Verification Link :<a href="http://192.168.0.111:8082/verify/${token}">Click this link to verify</a>
             `,
 	}).then((info) => {
     console.log(`Message sent: %s`, info.messageID);
