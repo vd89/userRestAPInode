@@ -10,7 +10,11 @@ block content
         .card-title
           h3 Please provide required inputs
       .card-body
-        form.form-horizontal(method='post', action='#')
+      if(display)
+        .alert.alert-success(role='success') #{message}
+      if(error)
+        .alert.alert-danger(role='danger') #{message}
+        form.form-horizontal(method='POST', action='/login')
           .form-group
             label.cols-sm-2.control-label(for='email') Your Email
             .cols-sm-10

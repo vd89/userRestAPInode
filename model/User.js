@@ -16,8 +16,15 @@ const UserSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+	},
+	token: {
+		type: String
+	},
+	active: {
+		type: Boolean,
+		default: false
+	}
 });
 
-const user = mongoose.model('User',UserSchema)
-export default user
+const User = mongoose.model('User',UserSchema)
+export default User

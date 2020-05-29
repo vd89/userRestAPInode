@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
-const userColl = 'userData'
-const URI = `mongodb://127.0.0.1:27017/${userColl}`;
+
+const URI = `mongodb://127.0.0.1:27017/userData`;
 const opt = { useNewUrlParser: true, useUnifiedTopology: true };
 
 

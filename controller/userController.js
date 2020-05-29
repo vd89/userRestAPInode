@@ -1,5 +1,7 @@
-import user from "../model/User";
+import User from "../model/User";
 import {genSalt,hash} from 'bcrypt';
+import { generate } from "randomstring";
+import userMail from "./userMail";
 
 // View all 
 const listAll = async (req, res) => {
@@ -8,14 +10,21 @@ const listAll = async (req, res) => {
 
 const create = async (req, res) => {
   try {
-    const { name, email, userName,password,confirm } = req.body
-    if (password === confirm) {
+    if (req.body.password === req.body.confirm) {
+      const {name,email,userName} = req.body
+      const token = generate()
       const salt = await genSalt(12)
-      const newPassword = await hash(req.body.password, salt)
-      // console.log(password);
-      const userData = new user(name,email,userName,newPassword)
-      console.log(userData);
-      res.send(userData)
+      const password = await hash(req.body.password, salt)
+      const isUser = await User.findOne({ email: email })
+      const userData = new User({ name, email, userName, password,token })
+      if (!isUser) {
+        // console.log(userData);
+        await userData.save()
+        await userMail(email,name,token)
+        res.render('login',{message: 'Check Email, Verify your email',display:'true'})      
+      } else {
+        res.send(`The user is in the data base `)
+      }
     } else {
       console.log(`Plsease give password correct`);
     }
