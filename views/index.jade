@@ -10,7 +10,7 @@ block content
         .card-title
           h3 Please provide required inputs
       .card-body
-        form.form-horizontal(method='post', action='#')
+        form.form-horizontal(method='POST', action='/')
           .form-group
             label.cols-sm-2.control-label(for='name') Your Name
             .cols-sm-10
@@ -31,7 +31,7 @@ block content
               .input-group
                 span.input-group-addon
                   i.fa.fa-users.fa(aria-hidden='true')
-                input#username.form-control(type='text', name='username', placeholder='Enter your Username')
+                input#username.form-control(type='text', name='userName', placeholder='Enter your Username')
           .form-group
             label.cols-sm-2.control-label(for='password') Password
             .cols-sm-10
@@ -47,6 +47,6 @@ block content
                   i.fa.fa-lock.fa-lg(aria-hidden='true')
                 input#confirm.form-control(type='password', name='confirm', placeholder='Confirm your Password')
           .form-group
-            button.btn.btn-primary.btn-lg.btn-block.login-button(type='button') Register
+            button.btn.btn-primary.btn-lg.btn-block.login-button Register
           .login-register
             a(href='#') Login
