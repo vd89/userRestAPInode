@@ -1,5 +1,5 @@
 {
-  "name": "testNodeExpress",
+  "name": "testnodeexpress",
   "version": "1.0.0",
   "description": "User rest api using jade template ",
   "main": "index.js",
