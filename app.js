@@ -1,5 +1,9 @@
 import express from 'express';
 import path from 'path';
+import dbConnect from './db/dbConnect';
+dbConnect
+
+
 const __dirname = path.resolve();
 const app = express()
 
@@ -19,5 +23,5 @@ app.get('/login',(req,res) => {
   
   const port  = 8082
 app.listen(port,() => {
-  console.log(`The server is running on port ${port}`);
+  console.log(`The server is running on port ${port} 👻 👻 👻`);
 })
